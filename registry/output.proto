@@ -1,0 +1,10 @@
+
+syntax = "proto3";
+
+package registry;
+
+option go_package = "github.com/paladin-devops/waypoint-plugin-gitlab/registry";
+
+message Artifact {
+  string source = 1;
+}
