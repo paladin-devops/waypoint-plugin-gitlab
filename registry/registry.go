@@ -3,14 +3,20 @@ package registry
 import (
 	"context"
 	"fmt"
+	"log"
+	"strings"
 
-	"github.com/paladin-devops/waypoint-plugin-gitlab/builder"
 	"github.com/hashicorp/waypoint-plugin-sdk/terminal"
+	"github.com/paladin-devops/waypoint-plugin-gitlab/builder"
+	gitlab "github.com/xanzy/go-gitlab"
 )
 
 type RegistryConfig struct {
-	Name    string "hcl:name"
-	Version string "hcl:version"
+	Name      string "hcl:name"
+	Version   string "hcl:version"
+	ProjectID int    "hcl:project_id"
+	FileName  string "hcl:file_name"
+	Token     string "hcl:token"
 }
 
 type Registry struct {
@@ -71,6 +77,17 @@ func (r *Registry) push(ctx context.Context, ui terminal.UI, binary *builder.Bin
 	u := ui.Status()
 	defer u.Close()
 	u.Update("Pushing binary to registry")
+
+	git, err := gitlab.NewClient(r.config.Token)
+	if err != nil {
+		log.Fatalf("Failed to create client: %v", err)
+	}
+	// Publishing artifact returns GenericPackagesFile
+	gpf, _, err := git.GenericPackages.PublishPackageFile(r.config.ProjectID, r.config.Name, r.config.Version, r.config.FileName, strings.NewReader(""), &gitlab.PublishPackageFileOptions{})
+	fmt.Println(gpf)
+	if err != nil {
+		log.Fatalf("Failed to push package: %v", err)
+	}
 
 	return &Artifact{}, nil
 }

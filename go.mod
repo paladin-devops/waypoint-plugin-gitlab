@@ -21,12 +21,15 @@ require (
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.5 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/gookit/color v1.3.1 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-argmapper v0.2.3 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/hashicorp/go-hclog v0.14.1 // indirect
 	github.com/hashicorp/go-multierror v1.1.0 // indirect
 	github.com/hashicorp/go-plugin v1.4.2 // indirect
+	github.com/hashicorp/go-retryablehttp v0.6.8 // indirect
 	github.com/hashicorp/hcl/v2 v2.6.0 // indirect
 	github.com/hashicorp/yamux v0.0.0-20180604194846-3520598351bb // indirect
 	github.com/iancoleman/strcase v0.1.2 // indirect
@@ -50,12 +53,16 @@ require (
 	github.com/rogpeppe/go-internal v1.6.1 // indirect
 	github.com/stretchr/testify v1.6.1 // indirect
 	github.com/tj/go-spin v1.1.0 // indirect
+	github.com/xanzy/go-gitlab v0.55.1 // indirect
 	github.com/y0ssar1an/q v1.0.7 // indirect
 	github.com/zclconf/go-cty v1.2.0 // indirect
 	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 // indirect
-	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 // indirect
-	golang.org/x/sys v0.0.0-20200916030750-2334cc1a136f // indirect
-	golang.org/x/text v0.3.2 // indirect
+	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
+	golang.org/x/oauth2 v0.0.0-20181106182150-f42d05182288 // indirect
+	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f // indirect
+	golang.org/x/text v0.3.3 // indirect
+	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
+	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/genproto v0.0.0-20201022181438-0ff5f38871d5 // indirect
 	google.golang.org/grpc v1.33.1 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
