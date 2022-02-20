@@ -12,11 +12,11 @@ import (
 )
 
 type RegistryConfig struct {
-	Name      string "hcl:name"
-	Version   string "hcl:version"
-	ProjectID int    "hcl:project_id"
-	FileName  string "hcl:file_name"
-	Token     string "hcl:token"
+	Name      string `hcl:"name,attr"`
+	Version   string `hcl:"version,attr"`
+	ProjectID int    `hcl:"project_id,attr"`
+	FileName  string `hcl:"file_name,attr"`
+	Token     string `hcl:"token,attr"`
 }
 
 type Registry struct {
