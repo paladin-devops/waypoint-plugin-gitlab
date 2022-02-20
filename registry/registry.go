@@ -7,7 +7,6 @@ import (
 	"strings"
 
 	"github.com/hashicorp/waypoint-plugin-sdk/terminal"
-	"github.com/paladin-devops/waypoint-plugin-gitlab/builder"
 	gitlab "github.com/xanzy/go-gitlab"
 )
 
@@ -82,7 +81,7 @@ func (r *Registry) accessInfo() (*AccessInfo, error) {
 // as an input parameter.
 // If an error is returned, Waypoint stops the execution flow and
 // returns an error to the user.
-func (r *Registry) push(ctx context.Context, ui terminal.UI, binary *builder.Binary) (*Artifact, error) {
+func (r *Registry) push(ctx context.Context, ui terminal.UI) (*Artifact, error) {
 	u := ui.Status()
 	defer u.Close()
 	u.Update("Pushing binary to registry")
