@@ -50,6 +50,15 @@ func (r *Registry) PushFunc() interface{} {
 	return r.push
 }
 
+// Implement Registry
+func (r *Registry) AccessInfoFunc() interface{} {
+	return r.accessInfo
+}
+
+func (r *Registry) accessInfo() (*AccessInfo, error) {
+	return &AccessInfo{}, nil
+}
+
 // A PushFunc does not have a strict signature, you can define the parameters
 // you need based on the Available parameters that the Waypoint SDK provides.
 // Waypoint will automatically inject parameters as specified
